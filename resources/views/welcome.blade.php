@@ -14,8 +14,9 @@
          @vite(['resources/js/app.js','resources/css/app.css'])
     </head>
     <body class="antialiased">
-        
+
         <main>
+            <livewire:side-bar/>
             @yield("content")
         </main>
     </body>
