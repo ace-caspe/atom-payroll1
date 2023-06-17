@@ -1,0 +1,18 @@
+.odecci-action-btn {
+    background-color: $secondary;
+    border: 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    span {
+        margin: 0 10px;
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+}

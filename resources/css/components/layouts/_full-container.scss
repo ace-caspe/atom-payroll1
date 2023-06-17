@@ -1,4 +1,4 @@
-.full-container {
+.odecci-full-container {
     margin-left: $condensed-sidebard-width;
-    padding: 2rem;
+    width: calc(100% - $condensed-sidebard-width);
 }

@@ -1,0 +1,43 @@
+.odecci-attachment-btn {
+    box-shadow: 1px 2px 5px 2px $button-shadow;
+    background-color: $light;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    span {
+        margin: 0 10px;
+        font-size: 12;
+    }
+    .remove-btn {
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        background-color: $accent;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: $light;
+        top: -7px;
+        right: -15px;
+        border: 1px solid $accent;
+        cursor: pointer;
+        clear: left;
+        text-align: center;
+
+        &:hover {
+            background-color: $light;
+            color: $accent;
+        }
+    }
+    &:hover {
+        transform: scale(1.1);
+        .remove-btn {
+            opacity: 1;
+        }
+    }
+}

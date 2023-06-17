@@ -1,0 +1,157 @@
+.odecci-dropdown {
+    display: flex;
+    border-radius: 2em;
+    flex-direction: column;
+    position: relative;
+    width: $lg-input;
+    input {
+        font-size: $textbox-font-base;
+        border: 0;
+        background-image: url("../../../../public/assets/icons/dropdown-down.png");
+        box-shadow: 1px 2px 3px 2px rgb(220, 220, 220);
+        background-position: 95%;
+        background-repeat: no-repeat;
+        border: 1px solid white;
+        padding: 0.5rem 2.2rem 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border-width: 2px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        &::-webkit-input-placeholder {
+            opacity: 0;
+        }
+        &:focus {
+            background-image: url("../../../../public/assets/icons/dropdown-up.png");
+            outline: 0;
+            border-left: 2px solid green;
+            border-right: 2px solid green;
+            border-top: 2px solid green;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-bottom: 0;
+            box-shadow: none;
+            ~ .odecci-data-container {
+                height: auto;
+                border-left: 2px solid green;
+                border-right: 2px solid green;
+                border-bottom: 2px solid green;
+            }
+            ~ .input-label {
+                color: green;
+                background-color: white;
+                top: -0.4rem;
+                font-size: $textbox-font-small;
+            }
+        }
+        &:not(:placeholder-shown) {
+            border-color: $active;
+
+            ~ .input-label {
+                color: green;
+                background-color: white;
+                top: -0.4rem;
+                font-size: $textbox-font-small;
+            }
+        }
+    }
+    .odecci-data-container {
+        position: absolute;
+        top: 2.5rem;
+        height: 0;
+        width: 100%;
+        z-index: 10;
+        opacity: 1;
+        border-top: 0;
+        border-bottom-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border-width: 2px;
+        overflow-y: auto;
+
+        &:hover {
+            height: auto;
+            border-left: 2px solid green;
+            border-right: 2px solid green;
+            border-bottom: 2px solid green;
+        }
+        .odecci-selections {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: $light;
+            width: 100%;
+            height: 100%;
+            .odecci-data {
+                padding: 10px;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                    background-color: $secondary;
+                    color: $light;
+                }
+                &:focus {
+                    background-color: $secondary;
+                    color: $light;
+                }
+            }
+            .odecci-no-data {
+                padding: 10px;
+                font-size: 0.8rem;
+                display: none;
+                text-align: center;
+                justify-content: center;
+                color: $shade;
+            }
+            .odecci-new-data {
+                padding: 10px;
+                bottom: 0;
+                bottom: 20px;
+                width: 100%;
+                background-color: $secondary-light;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                align-items: center;
+                cursor: pointer;
+                svg {
+                    fill: $dark;
+                    transition: all 0.3s ease-in-out;
+                }
+                &:hover {
+                    background-color: $primary;
+                    color: $light;
+                    svg {
+                        fill: $light;
+                    }
+                }
+            }
+        }
+    }
+    label {
+        position: absolute;
+        left: 1rem;
+        top: 0.6rem;
+        color: $shade;
+        transition: $animation;
+        font-size: $textbox-font-base;
+        z-index: 2;
+        &:focus {
+            color: red;
+            background-color: white;
+            top: -0.4rem;
+            font-size: $textbox-font-small;
+        }
+    }
+    .selected-odecci-data {
+        background-color: $secondary;
+        color: $light;
+    }
+}
+
+.odecci-custom-select {
+    padding: 1rem;
+    font-size: 2rem;
+}

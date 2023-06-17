@@ -1,3 +1,41 @@
 h1 {
     color: $primary;
 }
+
+.odecci-element-inline-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.odecci-element-block-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+}
+.odecci-separator {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin: 2rem 0;
+    label {
+        width: 20rem;
+        font-size: 1.2rem;
+    }
+    hr {
+        height: 0.2rem;
+        width: 100%;
+        background-color: $primary;
+        border: 0;
+    }
+}
+.odecci-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}

@@ -1,0 +1,47 @@
+.odecci-lg-input {
+    display: flex;
+    flex-direction: column;
+    width: $lg-input;
+    gap: 10px;
+    position: relative;
+    input {
+        border: 2px solid $light;
+        box-shadow: inset 1px 2px 3px 2px rgb(220, 220, 220);
+        font-size: $textbox-font-base;
+        padding: $textbox-padding;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        &::-webkit-input-placeholder {
+            opacity: 0;
+        }
+
+        &:focus {
+            outline: 0;
+            border-color: $active;
+            ~ .input-label {
+                color: $active;
+                background-color: white;
+                top: -0.4rem;
+                font-size: $textbox-font-small;
+            }
+        }
+        &:not(:placeholder-shown) {
+            border-color: $active;
+            ~ .input-label {
+                color: $active;
+                background-color: white;
+                top: -0.4rem;
+                font-size: $textbox-font-small;
+            }
+        }
+    }
+
+    .input-label {
+        position: absolute;
+        left: 1rem;
+        top: 0.6rem;
+        color: $shade;
+        transition: $animation;
+        font-size: $textbox-font-base;
+    }
+}

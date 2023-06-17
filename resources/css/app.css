@@ -8,11 +8,51 @@ h1 {
   color: #102b3c;
 }
 
+.odecci-element-inline-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.odecci-element-block-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+}
+
+.odecci-separator {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin: 2rem 0;
+}
+.odecci-separator label {
+  width: 20rem;
+  font-size: 1.2rem;
+}
+.odecci-separator hr {
+  height: 0.2rem;
+  width: 100%;
+  background-color: #102b3c;
+  border: 0;
+}
+
+.odecci-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
 .odecci-side-bar {
   height: 100vh;
   width: 5rem;
   background-color: white;
-  box-shadow: 2px 4px 4px 0 rgb(203, 203, 203);
+  box-shadow: 2px 4px 4px 0 rgba(93, 93, 93, 0.386);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -20,6 +60,7 @@ h1 {
   transition: all 0.3s ease-in-out;
   position: fixed;
   top: 0;
+  z-index: 20;
 }
 .odecci-side-bar .odecci-company-logo {
   width: 100%;
@@ -92,7 +133,357 @@ h1 {
   opacity: 1;
 }
 
-.full-container {
+.odecci-lg-input {
+  display: flex;
+  flex-direction: column;
+  width: 22rem;
+  gap: 10px;
+  position: relative;
+}
+.odecci-lg-input input {
+  border: 2px solid white;
+  box-shadow: inset 1px 2px 3px 2px rgb(220, 220, 220);
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.odecci-lg-input input::-webkit-input-placeholder {
+  opacity: 0;
+}
+.odecci-lg-input input:focus {
+  outline: 0;
+  border-color: green;
+}
+.odecci-lg-input input:focus ~ .input-label {
+  color: green;
+  background-color: white;
+  top: -0.4rem;
+  font-size: 0.8rem;
+}
+.odecci-lg-input input:not(:-moz-placeholder-shown) {
+  border-color: green;
+}
+.odecci-lg-input input:not(:placeholder-shown) {
+  border-color: green;
+}
+.odecci-lg-input input:not(:-moz-placeholder-shown) ~ .input-label {
+  color: green;
+  background-color: white;
+  top: -0.4rem;
+  font-size: 0.8rem;
+}
+.odecci-lg-input input:not(:placeholder-shown) ~ .input-label {
+  color: green;
+  background-color: white;
+  top: -0.4rem;
+  font-size: 0.8rem;
+}
+.odecci-lg-input .input-label {
+  position: absolute;
+  left: 1rem;
+  top: 0.6rem;
+  color: #777777;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2rem;
+}
+
+.odecci-action-btn {
+  background-color: #205375;
+  border: 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.odecci-action-btn span {
+  margin: 0 10px;
+}
+.odecci-action-btn:hover {
+  transform: scale(1.1);
+}
+
+.odecci-attachment-btn {
+  box-shadow: 1px 2px 5px 2px rgba(184, 183, 183, 0.5);
+  background-color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.odecci-attachment-btn span {
+  margin: 0 10px;
+  font-size: 12;
+}
+.odecci-attachment-btn .remove-btn {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  background-color: #ed1c24;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  top: -7px;
+  right: -15px;
+  border: 1px solid #ed1c24;
+  cursor: pointer;
+  clear: left;
+  text-align: center;
+}
+.odecci-attachment-btn .remove-btn:hover {
+  background-color: white;
+  color: #ed1c24;
+}
+.odecci-attachment-btn:hover {
+  transform: scale(1.1);
+}
+.odecci-attachment-btn:hover .remove-btn {
+  opacity: 1;
+}
+
+.show-all-btn {
+  font-size: 13px;
+  cursor: pointer;
+}
+.show-all-btn:hover {
+  text-decoration: underline;
+}
+
+.odecci-dropdown {
+  display: flex;
+  border-radius: 2em;
+  flex-direction: column;
+  position: relative;
+  width: 22rem;
+}
+.odecci-dropdown input {
+  font-size: 1.2rem;
+  border: 0;
+  background-image: url("../../../../public/assets/icons/dropdown-down.png");
+  box-shadow: 1px 2px 3px 2px rgb(220, 220, 220);
+  background-position: 95%;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  padding: 0.5rem 2.2rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.odecci-dropdown input::-webkit-input-placeholder {
+  opacity: 0;
+}
+.odecci-dropdown input:focus {
+  background-image: url("../../../../public/assets/icons/dropdown-up.png");
+  outline: 0;
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+  border-top: 2px solid green;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0;
+  box-shadow: none;
+}
+.odecci-dropdown input:focus ~ .odecci-data-container {
+  height: auto;
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+  border-bottom: 2px solid green;
+}
+.odecci-dropdown input:focus ~ .input-label {
+  color: green;
+  background-color: white;
+  top: -0.4rem;
+  font-size: 0.8rem;
+}
+.odecci-dropdown input:not(:-moz-placeholder-shown) {
+  border-color: green;
+}
+.odecci-dropdown input:not(:placeholder-shown) {
+  border-color: green;
+}
+.odecci-dropdown input:not(:-moz-placeholder-shown) ~ .input-label {
+  color: green;
+  background-color: white;
+  top: -0.4rem;
+  font-size: 0.8rem;
+}
+.odecci-dropdown input:not(:placeholder-shown) ~ .input-label {
+  color: green;
+  background-color: white;
+  top: -0.4rem;
+  font-size: 0.8rem;
+}
+.odecci-dropdown .odecci-data-container {
+  position: absolute;
+  top: 2.5rem;
+  height: 0;
+  width: 100%;
+  z-index: 10;
+  opacity: 1;
+  border-top: 0;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-width: 2px;
+  overflow-y: auto;
+}
+.odecci-dropdown .odecci-data-container:hover {
+  height: auto;
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+  border-bottom: 2px solid green;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections .odecci-data {
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections .odecci-data:hover {
+  background-color: #205375;
+  color: white;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections .odecci-data:focus {
+  background-color: #205375;
+  color: white;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections .odecci-no-data {
+  padding: 10px;
+  font-size: 0.8rem;
+  display: none;
+  text-align: center;
+  justify-content: center;
+  color: #777777;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections .odecci-new-data {
+  padding: 10px;
+  bottom: 0;
+  bottom: 20px;
+  width: 100%;
+  background-color: #f0efef;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections .odecci-new-data svg {
+  fill: black;
+  transition: all 0.3s ease-in-out;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections .odecci-new-data:hover {
+  background-color: #102b3c;
+  color: white;
+}
+.odecci-dropdown .odecci-data-container .odecci-selections .odecci-new-data:hover svg {
+  fill: white;
+}
+.odecci-dropdown label {
+  position: absolute;
+  left: 1rem;
+  top: 0.6rem;
+  color: #777777;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+.odecci-dropdown label:focus {
+  color: red;
+  background-color: white;
+  top: -0.4rem;
+  font-size: 0.8rem;
+}
+.odecci-dropdown .selected-odecci-data {
+  background-color: #205375;
+  color: white;
+}
+
+.odecci-custom-select {
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.odecci-full-container {
   margin-left: 5rem;
-  padding: 2rem;
+  width: calc(100% - 5rem);
+}
+
+.oddeci-module-head {
+  height: 10rem;
+  width: 100%;
+  background-image: linear-gradient(90deg, #205375, #102b3c);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.odecci-module-title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.odecci-module-title .odecci-title {
+  color: white;
+}
+.odecci-module-title .odecci-head-note {
+  color: white;
+}
+
+.odecci-profile {
+  width: 7rem;
+  height: 7rem;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0.2rem;
+}
+.odecci-profile img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.odecci-attachment-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  margin: 2rem 0;
+}
+.odecci-attachment-section .odecci-attachment-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.odecci-module-body {
+  padding: 3rem;
+  width: 100%;
+}
+.odecci-module-body .odecci-info-section {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
 }/*# sourceMappingURL=app.css.map */

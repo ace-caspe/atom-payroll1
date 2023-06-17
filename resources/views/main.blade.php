@@ -12,12 +12,14 @@
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
        
          @vite(['resources/js/app.js','resources/css/app.css'])
+         @livewireStyles
     </head>
     <body class="antialiased">
 
         <main>
             <livewire:side-bar/>
             @yield('content')
+            @livewireScripts
         </main>
     </body>
 </html>

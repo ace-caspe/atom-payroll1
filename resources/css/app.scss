@@ -6,4 +6,18 @@
 @import "variables";
 @import "components/global-elements";
 @import "components/side-bar";
+
+//* NOTE - Textboxes
+@import "components/textbox/small-input";
+@import "components/textbox/medium-input";
+@import "components/textbox/large-input";
+
+// * NOTE - Buttons
+@import "components/buttons/action-btn";
+@import "components/buttons/attachment-btn";
+@import "components/buttons/show-all-btn";
+
+// * NOTE - Dropdowns
+@import "components/elements/dropdowns";
 @import "components/layouts/full-container";
+@import "pages/new-employee";

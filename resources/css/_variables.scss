@@ -1,13 +1,36 @@
+//* NOTE - Colors
 $primary: #102b3c;
 $secondary: #205375;
-$secondary-light: #ed1c24;
+$secondary-light: #f0efef;
 $accent: #ed1c24;
+$shade: #777777;
 $light: white;
 $dark: black;
+$active: green;
+$neutral: green;
 
+//* NOTE- paddings
+$textbox-padding: 0.4rem;
+
+//* NOTE - Font sizes
+$textbox-font-base: 1.2rem;
+$textbox-font-small: 0.8rem;
+
+//* NOTE - Backgrounds
+$dark-gradient: linear-gradient(90deg, $secondary, $primary);
+
+//* NOTE - Shadows
+$button-shadow: rgba(184, 183, 183, 0.5);
+$input-inset-shadow: rgba(202, 202, 202, 0.347);
+
+//* NOTE - Animation
 $animation: all 0.3s ease-in-out;
 
-// * NOTE - layouts
-
+// * NOTE - Layouts
 $condensed-sidebard-width: 5rem;
 $expanded-sidebard-width: 12rem;
+
+// * NOTE - Input width
+$sm-input: 15rem;
+$md-input: 18rem;
+$lg-input: 22rem;
