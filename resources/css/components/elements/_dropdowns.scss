@@ -4,11 +4,38 @@
     flex-direction: column;
     position: relative;
     width: $lg-input;
-    input {
+
+    &:focus-within {
+        .dropdown {
+            background-image: url("../../../../public/assets/icons/dropdown-up.png");
+            outline: 0;
+            border-left: 2px solid green;
+            border-right: 2px solid green;
+            border-top: 2px solid green;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-bottom: 0;
+            box-shadow: none;
+            background-color: white;
+            ~ .odecci-data-container {
+                height: auto;
+                border-left: 2px solid green;
+                border-right: 2px solid green;
+                border-bottom: 2px solid green;
+            }
+            ~ .input-label {
+                color: green;
+                background-color: white;
+                top: -0.4rem;
+                font-size: $textbox-font-small;
+            }
+        }
+    }
+    .dropdown {
         font-size: $textbox-font-base;
         border: 0;
         background-image: url("../../../../public/assets/icons/dropdown-down.png");
-        box-shadow: 1px 2px 3px 2px rgb(220, 220, 220);
+        box-shadow: 1px 2px 5px 1px $light-and-shade;
         background-position: 95%;
         background-repeat: no-repeat;
         border: 1px solid white;
@@ -32,6 +59,7 @@
             border-bottom-left-radius: 0;
             border-bottom: 0;
             box-shadow: none;
+            background-color: white;
             ~ .odecci-data-container {
                 height: auto;
                 border-left: 2px solid green;
@@ -68,7 +96,36 @@
         border-bottom-left-radius: 0.5rem;
         border-width: 2px;
         overflow-y: auto;
-
+        .search-selection {
+            font-size: $textbox-font-base;
+            padding: 0.5rem 1rem 0.5rem 2.2rem;
+            background-color: white;
+            width: 100%;
+            border: 0;
+            background-image: url("../../../../public/assets/icons/search.png");
+            background-position: 2%;
+            background-repeat: no-repeat;
+            &:focus {
+                ~ .dropdown {
+                    background-image: url("../../../../public/assets/icons/dropdown-up.png") !important;
+                    outline: 0 !important;
+                    border-left: 2px solid green !important;
+                    border-right: 2px solid green !important;
+                    border-top: 2px solid green !important;
+                    border-bottom-right-radius: 0 !important;
+                    border-bottom-left-radius: 0 !important;
+                    border-bottom: 0 !important;
+                    box-shadow: none !important;
+                    background-color: white !important;
+                }
+                ~ .odecci-data-container {
+                    height: auto;
+                    border-left: 2px solid green;
+                    border-right: 2px solid green;
+                    border-bottom: 2px solid green;
+                }
+            }
+        }
         &:hover {
             height: auto;
             border-left: 2px solid green;

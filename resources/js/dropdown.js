@@ -1,9 +1,10 @@
 const dropdown = document.querySelectorAll(".dropdown");
-dropdown.forEach((item) => {
+const searchSelection = document.querySelectorAll(".search-selection");
+searchSelection.forEach((item) => {
     let childCount = 0;
     item.addEventListener("keyup", (event) => {
         let input = event.target.value.toUpperCase();
-        let dropdown = event.target.nextElementSibling.children[0];
+        let dropdown = event.target.nextElementSibling;
         let hasData = false;
         // SECTION  Keyboard navigation
         if (event.keyCode === 40) {
@@ -15,6 +16,9 @@ dropdown.forEach((item) => {
                 dropdown.children[childCount].classList.add(
                     "selected-odecci-data"
                 );
+
+                event.target.parentElement.previousElementSibling.value =
+                    dropdown.children[childCount].innerText;
 
                 if (dropdown.childElementCount - 3 !== childCount) {
                     childCount += 1;
@@ -29,15 +33,16 @@ dropdown.forEach((item) => {
                 dropdown.children[childCount].classList.add(
                     "selected-odecci-data"
                 );
+
+                event.target.parentElement.previousElementSibling.value =
+                    dropdown.children[childCount].innerText;
+
                 if (childCount !== 0) {
                     childCount -= 1;
                 }
             }
         }
-        if (event.keyCode === 13 || event.key === "Enter") {
-            event.preventDefault();
-            event.target.value = dropdown.children[childCount - 1].innerText;
-        }
+
         // !SECTION end of keyboard navigation
         // SECTION  Searching function
         Array.from(dropdown.children).map((child) => {

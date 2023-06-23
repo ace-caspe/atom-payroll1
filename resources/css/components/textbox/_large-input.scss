@@ -6,11 +6,12 @@
     position: relative;
     input {
         border: 2px solid $light;
-        box-shadow: inset 1px 2px 3px 2px rgb(220, 220, 220);
+        border: 1px solid $light-and-shade;
         font-size: $textbox-font-base;
         padding: $textbox-padding;
         border-radius: 0.5rem;
         padding: 0.5rem 1rem;
+        border-color: $primary;
         &::-webkit-input-placeholder {
             opacity: 0;
         }
@@ -32,6 +33,12 @@
                 background-color: white;
                 top: -0.4rem;
                 font-size: $textbox-font-small;
+            }
+        }
+        &:invalid {
+            border-color: $required;
+            ~ .input-label {
+                color: $required;
             }
         }
     }
