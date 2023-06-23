@@ -665,4 +665,8 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
+}
+
+.odecci-head-filter .odecci-head-filter {
+  background-color: #ed1c24;
 }/*# sourceMappingURL=app.css.map */
